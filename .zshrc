@@ -13,7 +13,7 @@ dark_grey="#252525"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/monroe/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -83,8 +83,8 @@ plugins=(
     copyfile
     git
     gradle
-    kubectl
-    kube-ps1
+    #kubectl
+    #kube-ps1
     osx
     vscode
     zsh-syntax-highlighting
@@ -92,17 +92,17 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-PROMPT='$(kube_ps1) '$PROMPT
+#PROMPT='$(kube_ps1) '$PROMPT
 # User configuration
 
 #oh-my-zsh config
 DISABLE_UPDATE_PROMPT=true
 #
 # kube-ps1 config
-kubeoff
-KUBE_PS1_COLOR_NS="$FG[117]"
-KUBE_PS1_COLOR_CONTEXT="$FG[240]"
-KUBE_PS1_SYMBOL_ENABLE=false
+#kubeoff
+#KUBE_PS1_COLOR_NS="$FG[117]"
+#KUBE_PS1_COLOR_CONTEXT="$FG[240]"
+#KUBE_PS1_SYMBOL_ENABLE=false
 
 
 # ls config
@@ -130,10 +130,10 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]="none"
 
 #alias'
 alias ls='ls -GFl'
-alias k='kubectl'
-alias kgp='kubectl get pods'
-alias kgd='kubectl get deployments'
-alias kgs='kubectl get services'
+#alias k='kubectl'
+#alias kgp='kubectl get pods'
+#alias kgd='kubectl get deployments'
+#alias kgs='kubectl get services'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
