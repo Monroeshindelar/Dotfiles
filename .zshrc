@@ -1,14 +1,5 @@
 export EDITOR=vim
 
-ij_green='#629755'
-ij_orange='#CC7832'
-ij_cream='#FFC66D'
-ij_purple='#9876AA'
-ij_yellow='#BBB529'
-ij_grey='#808080'
-ij_white='#A9B7C6'
-dark_grey="#252525"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -20,6 +11,10 @@ export ZSH="${HOME}/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="monroeshindelar"
+
+HIGHLIGHTING_THEME="darkula"
+
+source ~/Documents/Dotfiles/themes/$HIGHLIGHTING_THEME/highlighting_vars.sh
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,7 +83,7 @@ plugins=(
     osx
     vscode
     zsh-autosuggestions
-    zsh-syntax-highlighting
+    # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,22 +106,22 @@ LSCOLORS=cxDxcxdxdxegedadagacad
 
 # zsh syntax highlighting config
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[alias]="fg=$ij_orange"
-ZSH_HIGHLIGHT_STYLES[builtin]="fg=$ij_orange"
-ZSH_HIGHLIGHT_STYLES[command]="fg=$ij_orange"
-ZSH_HIGHLIGHT_STYLES[path]="fg=$ij_green"
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg=$ij_purple"
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg=$ij_purple"
-ZSH_HIGHLIGHT_STYLES[comment]="fg=$ij_grey"
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=$ij_green"
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=$ij_green"
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]="fg=red"
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]="fg=red"
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]="fg=$ij_white"
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]="fg=$ij_orange"
-ZSH_HIGHLIGHT_STYLES[function]="fg=$ij_cream"
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]="none"
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]="none"
+ZSH_HIGHLIGHT_STYLES[alias]="fg=$HIGHLIGHTING_ALIAS"
+ZSH_HIGHLIGHT_STYLES[builtin]="fg=$HIGHLIGHTING_BUILTIN"
+ZSH_HIGHLIGHT_STYLES[command]="fg=$HIGHLIGHTING_COMMAND"
+ZSH_HIGHLIGHT_STYLES[path]="fg=$HIGHLIGHTING_PATH"
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg=$HIGHLIGHTING_SINGLE_HYPHEN_OPTION"
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg=$HIGHLIGHTING_DOUBLE_HYPHEN_OPTION"
+ZSH_HIGHLIGHT_STYLES[comment]="fg=$HIGHLIGHTING_COMMENT"
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=$HIGHLIGHTING_SINGLE_QUOTED_ARG"
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=$HIGHLIGHTING_DOUBLE_QUOTED_ARG"
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]="fg=$HIGHLIGHTING_SINGLE_QUOTED_ARG_UNCLOSED"
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]="fg=$HIGHLIGHTING_DOUBLE_QUOTED_ARG_UNCLOSED"
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]="fg=$HIGHLIGHTING_DOLLAR_DOUBLE_QUOTED_ARG"
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]="fg=$HIGHLIGHTING_BACK_QUOTED_ARG"
+ZSH_HIGHLIGHT_STYLES[function]="fg=$HIGHLIGHTING_FUNCTION"
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]="$HIGHLIGHTING_BACK_QUOTED_ARG_DELIM"
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]="$HIGHLIGHTING_BACK_QUOTED_ARG_DELIM"
 
 #alias'
 alias ls='ls -GFl'
@@ -158,3 +153,5 @@ alias ls='ls -GFl'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
